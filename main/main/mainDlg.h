@@ -51,4 +51,6 @@ public:
 	int generate_radius(int x, int y);*/
 	afx_msg void OnDestroy();
 	afx_msg void OnBnClickedBtnAction();
+	afx_msg void OnBnClickedBtnOpen();
+	afx_msg void OnStnClickedStaticcy();
 };

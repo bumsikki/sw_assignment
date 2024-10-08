@@ -115,6 +115,8 @@ bool img_dlg::is_circle(int i, int j, int x, int y, int r) {
 void img_dlg::create_circle(int x, int y, int r) {
 	int pitch = img.GetPitch();
 	unsigned char* fm = (unsigned char*)img.GetBits();
+	//if (img)
+	//	img.Destroy();
 	memset(fm, 0xff, width * height);
 
 	for (int j = y-r; j < y+r; j++) {
@@ -149,12 +151,88 @@ void img_dlg::move_circle() {
 			auto path = temp + std::to_string(i) + ".bmp";
 			img.Save((LPCTSTR)path.c_str());*/
 
-			// how to make the path to relative?
+			// how to make relative path?
 			std::string temp = "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\res\\img\\";
-			std::string img_path = "img" + std::to_string(i) + ".bmp";
+			std::string img_path = "img" + std::to_string(i+1) + ".bmp";
 			std::string path = temp + img_path;
 			CString final_path(path.c_str());
 			img.Save(final_path);
 			Sleep(10);
+	}
+}
+
+void img_dlg::obtain_center() {
+	unsigned char* fm = (unsigned char*)img.GetBits();
+	int nWidth = img.GetWidth();
+	int nHeight = img.GetHeight();
+	int nPitch = img.GetPitch();
+
+	CRect rect(0, 0, nWidth, nHeight);
+	int nSumX = 0;
+	int nSumY = 0;
+	int nCount = 0;
+	for (int j = rect.top; j < rect.bottom; j++) {
+		for (int i = rect.left; i < rect.right; i++) {
+			if (fm[j * nPitch + i] == 0) {
+				nSumX += j;
+				nSumY += i;
+				nCount++;
+			}
+		}
+	}
+	dCenterX = nSumX / nCount;
+	dCenterY = nSumY / nCount;
+
+	std::cout << dCenterX << dCenterY << std::endl;
+	/*CClientDC dc(this);
+	img.Draw(dc, 0, 0);*/
+
+
+	//CPen pen(PS_SOLID, 5, RGB(255, 0, 0));
+
+	////dc.SelectObject(&pen);
+	//dc.MoveTo(dCenterX - 5, dCenterY - 5);
+	//dc.LineTo(dCenterX + 5, dCenterY + 5);
+	//dc.MoveTo(dCenterX + 5, dCenterY - 5);
+	//dc.LineTo(dCenterX - 5, dCenterY + 5);
+	//dc.SelectObject(&pen);
+
+	//CString coordText;
+	//coordText.Format(_T("(%d, %d)"), (int)dCenterX, (int)dCenterY);
+	//dc.TextOut(dCenterX + 10, dCenterY + 10, coordText);
+	//
+}
+
+void img_dlg::draw_center() {
+	CClientDC dc(this);
+	/*CPen pen(PS_SOLID, 30, RGB(255, 0, 0));
+
+	dc.SelectObject(&pen);
+	dc.MoveTo(dCenterX - 5, dCenterY - 5);
+	dc.LineTo(dCenterX + 5, dCenterY + 5);
+	dc.MoveTo(dCenterX + 5, dCenterY - 5);
+	dc.LineTo(dCenterX - 5, dCenterY + 5);
+	dc.SelectObject(&pen);*/
+
+	CString coordText;
+	coordText.Format(_T("(%d, %d)"), (int)dCenterX, (int)dCenterY);
+	dc.TextOut(dCenterX + 10, dCenterY + 10, coordText);
+	img.Draw(dc, 0, 0);
+	//nvalidate();
+}
+
+void img_dlg::load_image() {
+	if (img != NULL)
+		img.Destroy();
+	CString filter = _T("Image Files (*.jpg; *.bmp; *.png)|*.jpg;*.bmp;*.png|All Files (*.*)|*.*||");
+	/*std::string temp = "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\res\\img\\";
+	CString final_path(temp.c_str());*/
+	CFileDialog fileDlg(TRUE, NULL, NULL, OFN_FILEMUSTEXIST, filter, NULL);
+	if (fileDlg.DoModal() == IDOK)
+	{	
+		CString filePath = fileDlg.GetPathName(); // 사용자가 선택한 파일 경로 가져오기
+		img.Load(filePath);
+		obtain_center();
+		draw_center();
 	}
 }

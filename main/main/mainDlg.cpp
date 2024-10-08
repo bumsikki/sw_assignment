@@ -81,6 +81,8 @@ BEGIN_MESSAGE_MAP(CmainDlg, CDialogEx)
 	ON_BN_CLICKED(IDC_BTN_Draw, &CmainDlg::OnBnClickedBtnDraw)
 	ON_WM_DESTROY()
 	ON_BN_CLICKED(IDC_BTN_Action, &CmainDlg::OnBnClickedBtnAction)
+	ON_BN_CLICKED(IDC_BTN_OPEN, &CmainDlg::OnBnClickedBtnOpen)
+	ON_STN_CLICKED(IDC_STATIC_cy, &CmainDlg::OnStnClickedStaticcy)
 END_MESSAGE_MAP()
 
 
@@ -231,7 +233,6 @@ void CmainDlg::OnDestroy()
 {
 	CDialogEx::OnDestroy();
 	delete dlg;
-	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 }
 
 void CmainDlg::OnBnClickedBtnAction()
@@ -240,6 +241,21 @@ void CmainDlg::OnBnClickedBtnAction()
 	UpdateData(); // to update x1,y1,x2,y2 
 	std::cout << x1 << y1 << x2 << y2 << std::endl;
 	dlg->move_circle();
+}
+
+
+void CmainDlg::OnBnClickedBtnOpen()
+{
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
-	//dlg->move_circle(x1, y1, r);
+	dlg->load_image();
+	CString x(std::to_string(dlg->dCenterX).c_str());
+	CString y(std::to_string(dlg->dCenterY).c_str());
+	SetDlgItemText(IDC_STATIC_cx, x);
+	SetDlgItemText(IDC_STATIC_cy, y);
+}
+
+
+void CmainDlg::OnStnClickedStaticcy()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
 }

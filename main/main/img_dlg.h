@@ -41,4 +41,9 @@ public:
 	bool is_circle(int i, int j, int x, int y, int r);
 	void create_circle(int x, int y, int r);
 	void move_circle(); 
+	void load_image();
+	int dCenterX;
+	int dCenterY;
+	void obtain_center();
+	void draw_center();
 };
