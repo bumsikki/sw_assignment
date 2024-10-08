@@ -45,4 +45,7 @@ public:
 	int x2;
 	int y2;
 	int r;
+	bool is_valid_radius(int x, int  y, int r);
+	int generate_radius(int x, int y);
+	afx_msg void OnDestroy();
 };

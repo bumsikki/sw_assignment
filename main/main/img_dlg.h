@@ -31,5 +31,6 @@ public:
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
 	void initImg();
-	/*afx_msg void OnBnClickedBtnDraw();*/
+	void create_circle(int x, int y, int r);
+	void move_circle(int x, int y, int r); 
 };

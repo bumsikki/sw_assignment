@@ -7,20 +7,20 @@
       "RelativeMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|solutionrelative:main\\mainDlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\mainDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|solutionrelative:main\\mainDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\main.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     ",
-      "RelativeMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|solutionrelative:main\\main.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     "
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\img_dlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|solutionrelative:main\\img_dlg.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\mainDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|solutionrelative:main\\mainDlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\img_dlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|solutionrelative:main\\img_dlg.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\main.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     ",
+      "RelativeMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|solutionrelative:main\\main.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0086 2$  \u0022     "
     },
     {
       "AbsoluteMoniker": "D:0:0:{61E34061-3105-4499-AAC5-0716A5F34B98}|main\\main.vcxproj|C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\main.rc||{177559E0-D141-11D0-92DF-00A0C9138C45}|,   b e g i n       % \u0087 2$  \u0022     ",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -50,7 +50,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "main.rc - IDD_MAIN_DIALOG - Dialog",
               "DocumentMoniker": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\main.rc",
               "RelativeDocumentMoniker": "main\\main.rc",
@@ -62,26 +62,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "img_dlg.cpp",
               "DocumentMoniker": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\img_dlg.cpp",
               "RelativeDocumentMoniker": "main\\img_dlg.cpp",
               "ToolTip": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\img_dlg.cpp",
               "RelativeToolTip": "main\\img_dlg.cpp",
-              "ViewState": "AgIAADgAAAAAAAAAAAAUwDgAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAEoAAAAAAAAAAAAUwGIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-08T03:09:01.639Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "img_dlg.h",
+              "DocumentMoniker": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\img_dlg.h",
+              "RelativeDocumentMoniker": "main\\img_dlg.h",
+              "ToolTip": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\img_dlg.h",
+              "RelativeToolTip": "main\\img_dlg.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-08T02:58:17.124Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "mainDlg.h",
               "DocumentMoniker": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\mainDlg.h",
               "RelativeDocumentMoniker": "main\\mainDlg.h",
               "ToolTip": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\mainDlg.h",
               "RelativeToolTip": "main\\mainDlg.h",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwC4AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwDAAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-08T02:58:42.206Z",
               "EditorCaption": ""
@@ -94,22 +107,9 @@
               "RelativeDocumentMoniker": "main\\mainDlg.cpp",
               "ToolTip": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\mainDlg.cpp",
               "RelativeToolTip": "main\\mainDlg.cpp",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAswMQAAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAwwNcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-08T02:57:53.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "img_dlg.h",
-              "DocumentMoniker": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\img_dlg.h",
-              "RelativeDocumentMoniker": "main\\img_dlg.h",
-              "ToolTip": "C:\\Users\\kbss7\\OneDrive\\Desktop\\glim\\sw_assignment\\main\\main\\img_dlg.h",
-              "RelativeToolTip": "main\\img_dlg.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-08T02:58:17.124Z",
               "EditorCaption": ""
             }
           ]

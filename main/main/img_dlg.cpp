@@ -46,7 +46,6 @@ BOOL img_dlg::OnInitDialog()
 
 	// TODO:  여기에 추가 초기화 작업을 추가합니다.
 	MoveWindow(0, 0, width, height);
-	
 	initImg();
 	return TRUE;  // return TRUE unless you set the focus to a control
 	// 예외: OCX 속성 페이지는 FALSE를 반환해야 합니다.
@@ -62,6 +61,9 @@ void img_dlg::OnPaint()
 		img.Draw(dc, 0, 0);
 }
 
+
+
+
 void img_dlg::initImg() {
 	img.Create(width, -height, bpp);
 	if (bpp == 8) {
@@ -73,6 +75,31 @@ void img_dlg::initImg() {
 	int pitch = img.GetPitch();
 	unsigned char* fm = (unsigned char*)img.GetBits();
 	memset(fm, 0xff, width * height);
+}
+
+
+
+void img_dlg::create_circle(int x, int y, int r) {
+	int pitch = img.GetPitch();
+	unsigned char* fm = (unsigned char*)img.GetBits();
+	memset(fm, 0xff, width * height);
+
+	for (int j = y; j < y+r; j++) {
+		for (int i = x; i < x+r; i++) {
+			fm[j * pitch + i] = 0;
+		}
+	}
+	CClientDC dc(this);
+	img.Draw(dc,0,0);
+	//Invalidate(); // somehow, invalidate doesn't work when using this function. it only shows the circle at the end
+}
+
+void img_dlg::move_circle(int x, int y, int r) {
+	for (int i = 0; i < 100; i++) {
+		create_circle(x+i, y, r);
+		Sleep(10);
+		//Invalidate();
+	}
 }
 
 //void img_dlg::OnBnClickedBtnDraw()

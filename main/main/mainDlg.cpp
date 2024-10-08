@@ -32,7 +32,7 @@ public:
 protected:
 	DECLARE_MESSAGE_MAP()
 public:
-	afx_msg void OnDestroy();
+	//afx_msg void OnDestroy();
 };
 
 CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
@@ -78,6 +78,8 @@ BEGIN_MESSAGE_MAP(CmainDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_CRT_DLG, &CmainDlg::OnBnClickedCrtDlg)
 	ON_BN_CLICKED(IDC_BTN_Draw, &CmainDlg::OnBnClickedBtnDraw)
+	ON_WM_DESTROY()
+	ON_BN_CLICKED(IDC_BTN_Action, &CmainDlg::OnBnClickedBtnAction)
 END_MESSAGE_MAP()
 
 
@@ -180,27 +182,50 @@ void CmainDlg::OnBnClickedCrtDlg()
 }
 
 
-void CAboutDlg::OnDestroy()
-{
-	CDialogEx::OnDestroy();
-	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
+
+bool CmainDlg::is_valid_radius(int x, int  y, int r) {
+	if (x + r > dlg->width)
+		return false;
+	if (x - r < 0)
+		return false;
+	if (y - r < 0)
+		return false;
+	if (y + r > dlg->height) {
+		return false;
+	}
+	return true;
 }
 
+int CmainDlg::generate_radius(int x, int y) {
+	r = rand() % 100 + 10;
+	while (!is_valid_radius(x, y, r)) {
+		r = rand() % 100 + 10;
+	}
+	return r;
+}
 
 void CmainDlg::OnBnClickedBtnDraw()
 {
 	UpdateData(); // to update x1,y1,x2,y2
 	// STEP3: draw a random-sized circle with center coordinate of (x1,y1)
-	r = rand() % 100 + 10;
+	r = generate_radius(x1, y1);
 
 	int pitch = dlg->img.GetPitch();
 	unsigned char* fm = (unsigned char*)dlg->img.GetBits();
-	memset(fm, 0, dlg->width * dlg->height);
-
-
-	dlg->Invalidate(); //update dlg img
-
+	dlg->create_circle(x1, y1, r);
+	//dlg->move_circle(x1, y1, r);
+	//dlg->Invalidate(); //update dlg img
 	cout << x1 << y1 << x2 << y2 << endl;
 }
 
+void CmainDlg::OnDestroy()
+{
+	CDialogEx::OnDestroy();
+	delete dlg;
+	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
+}
 
+void CmainDlg::OnBnClickedBtnAction()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+}
