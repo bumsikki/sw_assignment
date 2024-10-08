@@ -1,0 +1,17 @@
+#include <string>
+#include <vector>
+using namespace std;
+
+int solution(int a, int b) {
+    int answer = 0;
+    string a_s = to_string(a);
+    string b_s = to_string(b);
+    int cand1 = stoi(a_s+b_s);
+    int cand2 = stoi(b_s+a_s);
+    if(cand1 > cand2){
+        answer = cand1;
+    }else{
+        answer= cand2;
+    }
+    return answer;
+}

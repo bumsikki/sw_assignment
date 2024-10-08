@@ -1,0 +1,24 @@
+#include <string>
+#include <vector>
+#include <iostream>
+using namespace std;
+
+vector<int> solution(vector<int> arr, vector<int> query) {
+    vector<int> answer;
+    for(int i=0;i<query.size();i++){
+        if(i%2==0){ 
+            // if i is even
+            // remove afterwards
+            arr.erase(arr.begin()+query[i]+1,arr.end());
+        } // if
+        else{
+            // remove forwards
+            arr.erase(arr.begin(), arr.begin()+query[i]);
+        } //else
+    } // for
+    answer = arr;
+    
+    
+    
+    return answer;
+}

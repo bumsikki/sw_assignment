@@ -1,0 +1,14 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+vector<int> solution(vector<int> num_list, int n) {
+    vector<int> answer;
+    answer.reserve(num_list.size());
+    auto begin = num_list.begin() + n; // n
+    auto end = num_list.end(); // num_list.size()-1
+    answer.insert(answer.begin(), begin, end);
+    answer.insert(answer.begin() + num_list.size() - n, num_list.begin(), begin);
+    return answer;
+}
