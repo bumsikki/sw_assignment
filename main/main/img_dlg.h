@@ -30,7 +30,15 @@ protected:
 public:
 	virtual BOOL OnInitDialog();
 	afx_msg void OnPaint();
+	int x1;
+	int x2;
+	int y1;
+	int y2;
+	int r;
 	void initImg();
+	bool is_valid_radius(int x, int  y, int r);
+	int generate_radius(int x, int y);
+	bool is_circle(int i, int j, int x, int y, int r);
 	void create_circle(int x, int y, int r);
-	void move_circle(int x, int y, int r); 
+	void move_circle(); 
 };

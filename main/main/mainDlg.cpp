@@ -8,6 +8,7 @@
 #include "mainDlg.h"
 #include "afxdialogex.h"
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -183,40 +184,48 @@ void CmainDlg::OnBnClickedCrtDlg()
 
 
 
-bool CmainDlg::is_valid_radius(int x, int  y, int r) {
-	if (x + r > dlg->width)
-		return false;
-	if (x - r < 0)
-		return false;
-	if (y - r < 0)
-		return false;
-	if (y + r > dlg->height) {
-		return false;
-	}
-	return true;
-}
-
-int CmainDlg::generate_radius(int x, int y) {
-	r = rand() % 100 + 10;
-	while (!is_valid_radius(x, y, r)) {
-		r = rand() % 100 + 10;
-	}
-	return r;
+//bool CmainDlg::is_valid_radius(int x, int  y, int r) {
+//	if (x + r > dlg->width)
+//		return false;
+//	if (x - r < 0)
+//		return false;
+//	if (y - r < 0)
+//		return false;
+//	if (y + r > dlg->height) {
+//		return false;
+//	}
+//	return true;
+//}
+//
+//int CmainDlg::generate_radius(int x, int y) {
+//	r = rand() % 100 + 10;
+//	while (!is_valid_radius(x, y, r)) {
+//		r = rand() % 100 + 10;
+//	}
+//	return r;
+//}
+void CmainDlg::update_variables(int x1, int y1, int x2, int y2) {
+	dlg->x1 = x1;
+	dlg->y1 = y1;
+	dlg->x2 = x2;
+	dlg->y2 = y2;
+	dlg->r = dlg->generate_radius(x1, y1);
 }
 
 void CmainDlg::OnBnClickedBtnDraw()
 {
-	UpdateData(); // to update x1,y1,x2,y2
+	UpdateData(); // to update x1,y1,x2,y2 
 	// STEP3: draw a random-sized circle with center coordinate of (x1,y1)
-	r = generate_radius(x1, y1);
-
+	std::cout << x1 << y1 << x2 << y2 << std::endl;
+	update_variables(x1, y1, x2, y2);
 	int pitch = dlg->img.GetPitch();
 	unsigned char* fm = (unsigned char*)dlg->img.GetBits();
-	dlg->create_circle(x1, y1, r);
+	dlg->create_circle(x1, y1, dlg->r);
 	//dlg->move_circle(x1, y1, r);
 	//dlg->Invalidate(); //update dlg img
-	cout << x1 << y1 << x2 << y2 << endl;
 }
+
+
 
 void CmainDlg::OnDestroy()
 {
@@ -227,5 +236,10 @@ void CmainDlg::OnDestroy()
 
 void CmainDlg::OnBnClickedBtnAction()
 {
+	// STEP4: move a circle from (x1,y1) to (x2,y2)
+	UpdateData(); // to update x1,y1,x2,y2 
+	std::cout << x1 << y1 << x2 << y2 << std::endl;
+	dlg->move_circle();
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	//dlg->move_circle(x1, y1, r);
 }

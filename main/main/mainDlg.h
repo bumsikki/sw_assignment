@@ -5,9 +5,11 @@
 #pragma once
 
 #include <iostream>
+#include <filesystem>
 #include "img_dlg.h"
 
-using namespace std;
+namespace fs = std::filesystem;
+//using namespace std;
 
 // CmainDlg 대화 상자
 class CmainDlg : public CDialogEx
@@ -44,8 +46,9 @@ public:
 	int y1;
 	int x2;
 	int y2;
-	int r;
-	bool is_valid_radius(int x, int  y, int r);
-	int generate_radius(int x, int y);
+	void update_variables(int x1, int y1, int x2, int y2);
+	/*bool is_valid_radius(int x, int  y, int r);
+	int generate_radius(int x, int y);*/
 	afx_msg void OnDestroy();
+	afx_msg void OnBnClickedBtnAction();
 };
