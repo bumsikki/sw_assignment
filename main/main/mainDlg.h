@@ -7,6 +7,7 @@
 #include <iostream>
 #include "img_dlg.h"
 
+using namespace std;
 
 // CmainDlg 대화 상자
 class CmainDlg : public CDialogEx
@@ -38,4 +39,10 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedCrtDlg();
+	afx_msg void OnBnClickedBtnDraw();
+	int x1;
+	int y1;
+	int x2;
+	int y2;
+	int r;
 };

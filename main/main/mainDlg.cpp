@@ -11,7 +11,7 @@
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
-
+#pragma comment(linker, "/entry:WinMainCRTStartup /subsystem:console")
 
 // 응용 프로그램 정보에 사용되는 CAboutDlg 대화 상자입니다.
 
@@ -55,6 +55,10 @@ END_MESSAGE_MAP()
 
 CmainDlg::CmainDlg(CWnd* pParent /*=nullptr*/)
 	: CDialogEx(IDD_MAIN_DIALOG, pParent)
+	, x1(0)
+	, y1(0)
+	, x2(0)
+	, y2(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -62,6 +66,10 @@ CmainDlg::CmainDlg(CWnd* pParent /*=nullptr*/)
 void CmainDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Text(pDX, IDC_EDIT_x1, x1);
+	DDX_Text(pDX, IDC_EDIT_y1, y1);
+	DDX_Text(pDX, IDC_EDIT_x2, x2);
+	DDX_Text(pDX, IDC_EDIT_y2, y2);
 }
 
 BEGIN_MESSAGE_MAP(CmainDlg, CDialogEx)
@@ -69,6 +77,7 @@ BEGIN_MESSAGE_MAP(CmainDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_CRT_DLG, &CmainDlg::OnBnClickedCrtDlg)
+	ON_BN_CLICKED(IDC_BTN_Draw, &CmainDlg::OnBnClickedBtnDraw)
 END_MESSAGE_MAP()
 
 
@@ -104,6 +113,8 @@ BOOL CmainDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+	MoveWindow(0, 0, 1280, 600);
+	
 	dlg = new img_dlg;
 	dlg->Create(IDD_img_dlg, this);
 
@@ -172,7 +183,24 @@ void CmainDlg::OnBnClickedCrtDlg()
 void CAboutDlg::OnDestroy()
 {
 	CDialogEx::OnDestroy();
-	//if (dlg)
-	//	delete dlg;
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
 }
+
+
+void CmainDlg::OnBnClickedBtnDraw()
+{
+	UpdateData(); // to update x1,y1,x2,y2
+	// STEP3: draw a random-sized circle with center coordinate of (x1,y1)
+	r = rand() % 100 + 10;
+
+	int pitch = dlg->img.GetPitch();
+	unsigned char* fm = (unsigned char*)dlg->img.GetBits();
+	memset(fm, 0, dlg->width * dlg->height);
+
+
+	dlg->Invalidate(); //update dlg img
+
+	cout << x1 << y1 << x2 << y2 << endl;
+}
+
+
